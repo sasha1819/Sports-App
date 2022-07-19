@@ -5,14 +5,14 @@ import { NavigationContainer } from "@react-navigation/native";
 import RootNavigation from "./src/navigation/RootNavigation";
 
 export default function App() {
-  // const getData = async () => {
-  //   const res = await get("science");
-  //   console.log(res.data.data.articles[0]);
-  // };
+  const getData = async () => {
+    const res = await get("science");
+    console.log(res.data.data.articles[0]);
+  };
 
-  // useEffect(() => {
-  //   getData();
-  // }, []);
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <NavigationContainer>
