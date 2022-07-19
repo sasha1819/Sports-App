@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React, { useEffect } from "react";
+import { get } from "./src/entities/index";
+import { NavigationContainer } from "@react-navigation/native";
+import RootNavigation from "./src/navigation/RootNavigation";
 
 export default function App() {
+  // const getData = async () => {
+  //   const res = await get("science");
+  //   console.log(res.data.data.articles[0]);
+  // };
+
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <NavigationContainer>
+      <RootNavigation />
       <StatusBar style="auto" />
-    </View>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
