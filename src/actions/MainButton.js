@@ -1,19 +1,17 @@
 import React from "react";
 import { Dimensions } from "react-native";
-import { get } from "../entities/index";
+
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
 const width = Dimensions.get("window").width;
 const num = width / 3;
 
 const MainButton = (props) => {
-  const getData = async () => {
-    const res = await get(props.title);
-    props.setArticle(res.data.data.articles[0]);
-  };
-
   return (
-    <TouchableOpacity onPress={() => getData()} style={styels.container}>
+    <TouchableOpacity
+      onPress={() => props.getData(props.title)}
+      style={styels.container}
+    >
       <Text style={styels.title}>{props.title}</Text>
     </TouchableOpacity>
   );

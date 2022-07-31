@@ -1,13 +1,18 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, TextInput } from "react-native";
 
-const Input = () => {
-  const [text, onChangeText] = React.useState("test");
+const Input = (props) => {
+  const [text, onChangeText] = React.useState("");
+  const textChanging = (value) => {
+    props.setFilteredText(value);
+    onChangeText(value);
+  };
   return (
     <SafeAreaView>
       <TextInput
+        // onEndEditing={e}
         style={styles.input}
-        onChangeText={onChangeText}
+        onChangeText={textChanging}
         value={text}
       />
     </SafeAreaView>

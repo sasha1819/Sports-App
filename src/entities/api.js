@@ -6,6 +6,7 @@ export const getData = async (category) => {
   try {
     const query = `${url}category=${category}&country=il&apiKey=${newsApiKey}`;
     const res = await axios.get(query);
+
     return {
       data: res,
       isError: false,

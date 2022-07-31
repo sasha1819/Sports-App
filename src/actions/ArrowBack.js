@@ -6,7 +6,7 @@ export const NavigateBackArrow = (props) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity onPress={() => navigation.goBack()}>
-      <Ionicons name="ios-arrow-back-outline" size={50} color="black" />
+      <Ionicons name="ios-arrow-back-outline" size={30} color="black" />
     </TouchableOpacity>
   );
 };
